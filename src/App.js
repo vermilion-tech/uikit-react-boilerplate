@@ -97,6 +97,69 @@ export default (props) => {
           </div>
         </div>
       </div>
+
+      <div className='uk-section uk-section-large uk-background-cover uk-background-norepeat' data-src='https://via.placeholder.com/1920x1080?text=%20' width='1920' height='1080' data-uk-img>
+        <div className='uk-container'>
+          <div className='uk-margin-large'>
+            <h1 className='uk-text-center'>What People Say</h1>
+          </div>
+
+          <div data-uk-slider>
+            <ul className='uk-slider-items uk-child-width-1-3@s uk-grid uk-margin'>
+              <li>
+                <div className='uk-border-1'>
+                  <img data-src='https://via.placeholder.com/1920x1080/888?text=%20' width='1920' height='1080' alt='' data-uk-img />
+                </div>
+              </li>
+              <li>
+                <div className='uk-border-1'>
+                  <img data-src='https://via.placeholder.com/1920x1080/888?text=%20' width='1920' height='1080' alt='' data-uk-img />
+                </div>
+              </li>
+              <li>
+                <div className='uk-border-1'>
+                  <img data-src='https://via.placeholder.com/1920x1080/888?text=%20' width='1920' height='1080' alt='' data-uk-img />
+                </div>
+              </li>
+            </ul>
+
+            <div class="uk-flex uk-flex-center uk-flex-around uk-flex-row">
+              <a href="#" style={{color: "rgb(102, 102, 102)"}} data-uk-icon='chevron-left' data-uk-slider-item="previous" />
+              <ul className="uk-slider-nav uk-dotnav" />
+              <a href="#" style={{color: "rgb(102, 102, 102)"}} data-uk-icon='chevron-right' data-uk-slider-item="next" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className='uk-section uk-section-large'>
+        <div className='uk-container'>
+          <div className='uk-margin-large'>
+            <h1 className='uk-text-center uk-text-primary'>About Us</h1>
+          </div>
+
+          <ul data-uk-accordion>
+            <li>
+              <a className='uk-accordion-title uk-text-primary uk-border-1 uk-padding' href='#'>Item 1</a>
+              <div className='uk-accordion-content uk-border-1 uk-padding'>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+            </li>
+            <li>
+              <a className='uk-accordion-title uk-text-primary uk-border-1 uk-padding' href='#'>Item 2</a>
+              <div className='uk-accordion-content uk-border-1 uk-padding'>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+            </li>
+            <li>
+              <a className='uk-accordion-title uk-text-primary uk-border-1 uk-padding' href='#'>Item 3</a>
+              <div className='uk-accordion-content uk-border-1 uk-padding'>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </React.Fragment>
 
   )
