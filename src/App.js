@@ -1,5 +1,5 @@
 import React from 'react'
-import './Style.scss'
+import './stylesheets/main.scss'
 
 export default (props) => {
   return (

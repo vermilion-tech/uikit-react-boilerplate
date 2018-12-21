@@ -1,0 +1,9 @@
+// _fonts.scss
+// Define any typefaces or icon fonts here.
+
+// Base font: Montserrat
+// Import from Google fonts with all 3 sizes depicted in wires.
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
+
+// Override UIKit variables here.
+$global-font-family: "Montserrat", Arial, sans-serif !default;
