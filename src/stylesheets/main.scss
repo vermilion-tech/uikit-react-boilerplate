@@ -18,6 +18,10 @@ html, body, #app {
 @import
   './base/fonts';
 
+// Components
+@import
+  './components/accordion';
+
 // Import UIKit files from node module.
 @import
   '~uikit/src/scss/variables-theme',
