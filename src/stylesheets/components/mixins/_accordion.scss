@@ -1,0 +1,23 @@
+// Accordion component overrides.
+
+// Override title styles.
+@mixin hook-accordion-title() {
+	font-weight: 500;
+	text-transform: uppercase;
+
+	overflow: hidden;
+
+	//TODO: Return to deal with svg color fill for material icons.
+	&::before {
+			content: "";
+			width: ($accordion-title-line-height * 1em);
+			height: ($accordion-title-line-height * 1em);
+			float: right;
+			@include svg-fill($internal-accordion-close-image, "#000", $accordion-icon-color);
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+	}
+
+	.uk-open > &::before { @include svg-fill($internal-accordion-open-image, "#000", $accordion-icon-color);
+	}
+}

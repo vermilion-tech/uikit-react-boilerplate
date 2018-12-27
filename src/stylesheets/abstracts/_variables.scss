@@ -1,0 +1,34 @@
+// _variables.scss
+// Define variables and override UIKit variables.
+
+// Define colors.
+$monet-teal: #008198 !default;
+$monet-gold: #CFAB42 !default;
+$monet-pale-grey: #D8D8D8 !default;
+$monet-dark-grey: #595959;
+$monet-white: #FFFFFF;
+
+$monet-colors: (
+  teal: $monet-teal,
+  gold: $monet-gold,
+  pale-grey: $monet-pale-grey,
+  dark-grey: $monet-dark-grey,
+  white: $monet-white
+);
+
+$monet-alt-colors: (
+  teal: $monet-teal,
+  gold: $monet-gold,
+  pale-grey: $monet-pale-grey,
+  dark-grey: $monet-dark-grey,
+  white: $monet-white
+);
+
+// Overriding global UIKit variables.
+$global-primary-background: $monet-teal;
+$global-font-family: "Montserrat", Arial, sans-serif !default;
+// Overriden to restore full opacity.
+$inverse-global-color: $monet-white;
+
+// Overriding base UIKit variables.
+$base-heading-font-weight: 700;
