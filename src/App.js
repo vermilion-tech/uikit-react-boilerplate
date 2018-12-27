@@ -9,7 +9,7 @@ export default (props) => {
           <div className='uk-navbar-item'>
 
             <a href='#' className='uk-navbar-item uk-navbar-logo uk-width-small'>
-              <img data-src='https://via.placeholder.com/1920x1080?text=%20' alt='logo' width='1920' height='1080' data-uk-img />
+              <img data-src='src/images/monet-cap-logo.png' alt='logo' width='1920' height='1080' data-uk-img />
             </a>
 
           </div>
@@ -18,11 +18,11 @@ export default (props) => {
         <div className='uk-navbar-right uk-visible@s'>
           <ul className='uk-navbar-nav'>
             <li> <a href='#'>
-              <button className='uk-button uk-button-primary'>Contact Us</button>
+              <button className='uk-button uk-button-primary uk-border-rounded'>Contact Us</button>
             </a> </li>
 
             <li> <a href='#'>
-              <span className='uk-margin-small-right uk-text-primary' data-uk-icon='receiver' />
+              <i className='material-icons uk-margin-small-right uk-text-primary'>phone</i>
               1-800-377-5554
             </a> </li>
           </ul>
@@ -65,7 +65,7 @@ export default (props) => {
 
       <div className='uk-section uk-section-large'>
         <div className='uk-container uk-text-center'>
-          <h1 className='uk-margin-large'>Some Industries We Serve</h1>
+          <h1 className='uk-margin-large uk-text-primary'>Some Industries We Serve</h1>
 
           <div data-uk-slider>
             <ul className='uk-slider-items uk-child-width-1-3@s uk-grid uk-margin'>
@@ -89,7 +89,7 @@ export default (props) => {
               </li>
             </ul>
 
-            <div class="uk-flex uk-flex-center uk-flex-around uk-flex-row">
+            <div className="uk-flex uk-flex-center uk-flex-around uk-flex-row">
               <a href="#" style={{color: "rgb(102, 102, 102)"}} data-uk-icon='chevron-left' data-uk-slider-item="previous" />
               <ul className="uk-slider-nav uk-dotnav" />
               <a href="#" style={{color: "rgb(102, 102, 102)"}} data-uk-icon='chevron-right' data-uk-slider-item="next" />
@@ -98,10 +98,10 @@ export default (props) => {
         </div>
       </div>
 
-      <div className='uk-section uk-section-large uk-background-cover uk-background-norepeat' data-src='https://via.placeholder.com/1920x1080?text=%20' width='1920' height='1080' data-uk-img>
+      <div className='uk-section uk-section-large uk-background-cover uk-background-norepeat' data-src='src/images/teal-bg-image-2.png' data-uk-img>
         <div className='uk-container'>
           <div className='uk-margin-large'>
-            <h1 className='uk-text-center'>What People Say</h1>
+            <h1 className='uk-text-center uk-light'>What People Say</h1>
           </div>
 
           <div data-uk-slider>
@@ -123,7 +123,7 @@ export default (props) => {
               </li>
             </ul>
 
-            <div class="uk-flex uk-flex-center uk-flex-around uk-flex-row">
+            <div className="uk-flex uk-flex-center uk-flex-around uk-flex-row">
               <a href="#" style={{color: "rgb(102, 102, 102)"}} data-uk-icon='chevron-left' data-uk-slider-item="previous" />
               <ul className="uk-slider-nav uk-dotnav" />
               <a href="#" style={{color: "rgb(102, 102, 102)"}} data-uk-icon='chevron-right' data-uk-slider-item="next" />
@@ -140,24 +140,63 @@ export default (props) => {
 
           <ul data-uk-accordion>
             <li>
-              <a className='uk-accordion-title uk-text-primary uk-border-1 uk-padding' href='#'>Item 1</a>
-              <div className='uk-accordion-content uk-border-1 uk-padding'>
+              <a className='uk-accordion-title uk-text-primary uk-padding' href='#'>Item 1</a>
+              <div className='uk-accordion-content uk-padding'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
             </li>
             <li>
-              <a className='uk-accordion-title uk-text-primary uk-border-1 uk-padding' href='#'>Item 2</a>
-              <div className='uk-accordion-content uk-border-1 uk-padding'>
+              <a className='uk-accordion-title uk-text-primary uk-padding' href='#'>Item 2</a>
+              <div className='uk-accordion-content uk-padding'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
             </li>
             <li>
-              <a className='uk-accordion-title uk-text-primary uk-border-1 uk-padding' href='#'>Item 3</a>
-              <div className='uk-accordion-content uk-border-1 uk-padding'>
+              <a className='uk-accordion-title uk-text-primary uk-padding' href='#'>Item 3</a>
+              <div className='uk-accordion-content uk-padding'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <div className='uk-section uk-section-large uk-background-cover uk-background-norepeat' data-src='src/images/teal-bg-image-1.png' data-uk-img>
+        <div className='uk-container'>
+          <div className='uk-margin-large'>
+            <h1 className='uk-text-center uk-light'>Partners</h1>
+          </div>
+          <div className="uk-child-width-1-2@m uk-grid-match uk-grid" uk-grid>
+            <div>
+              <div className="uk-card uk-card-default uk-card-body">
+                <h3 className="uk-card-title">Lorem ipsum</h3>
+                  <p className="uk-margin-bottom uk-text-left">Example card text for
+                  partners section, let's make this a few lines.</p>
+              </div>
+            </div>
+            <div>
+              <div className="uk-card uk-card-default uk-card-body">
+                <h3 className="uk-card-title">Lorem ipsum</h3>
+                  <p className="uk-margin-bottom uk-text-left">Example card text for
+                  partners section, let's make this a few lines.</p>
+              </div>
+            </div>
+            <div>
+              <div className="uk-card uk-card-default uk-card-body">
+                <h3 className="uk-card-title">Lorem ipsum</h3>
+                  <p className="uk-margin-bottom uk-text-left">Example card text for
+                  partners section, let's make this a few lines.</p>
+              </div>
+            </div>
+            <div>
+              <div className="uk-card uk-card-default uk-card-body">
+                <h3 className="uk-card-title">Lorem ipsum</h3>
+                  <p className="uk-margin-bottom uk-text-left">Example card text for
+                  partners section, let's make this a few lines.</p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </React.Fragment>

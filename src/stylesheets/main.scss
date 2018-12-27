@@ -14,22 +14,28 @@ html, body, #app {
 @import
   './abstracts/variables';
 
-// 2. Import Components.
+// 2. Import custom components.
 
-// 3. Import default UIKit variables and mixins.
-  @import
-    '~uikit/src/scss/variables',
-    '~uikit/src/scss/mixins';
-
-// 4. Import mixin overrides and hooks.
+// 3. Import UIKit variable overrides.
 @import
-  './components/accordion-mixins';
+  './components/variables/accordion',
+  './components/variables/card';
 
-// 5. Import UIKit styles.
+// 4. Import framework variables and mixins.
 @import
-  '~uikit/src/scss/uikit';
+  '~uikit/src/scss/variables-theme',
+  '~uikit/src/scss/mixins-theme';
 
-// 6. Import Base styles.
+// 5. Import mixin overrides.
+@import
+    './components/mixins/accordion',
+    './components/mixins/card';
+
+// 6. Import main framework styles.
+@import
+      '~uikit/src/scss/uikit-theme';
+
+// 7. Import Base styles.
 @import
   './base/fonts';
 
