@@ -21,7 +21,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Use generic title',
+      title: 'Generic Title | ChangeMe',
       template: './src/index.html'
     })
   ]
