@@ -32,22 +32,22 @@ pipeline {
         stage('Deploy Staging') {
             when { branch 'development' }
             steps {
-                withCredentials([sshUserPrivateKey(credentialsId: "credential-id", keyFileVariable: 'keyfile')]) {
-                    sh 'ssh -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} runner@example.com "rm -rf /docker/staging-frontend.example.com/dist"'
-                    sh 'scp -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} -r ./dist "runner@example.com:/docker/staging-frontend.example.com/dist"'
+                withCredentials([sshUserPrivateKey(credentialsId: "89b383bf-8c04-4269-9df1-8a5ab97c579f", keyFileVariable: 'keyfile')]) {
+                    sh 'ssh -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} runner@ragnarok.monetcap.com "rm -rf /docker/staging-frontend.monetcap.com/dist"'
+                    sh 'scp -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} -r ./dist "runner@ragnarok.monetcap.com:/docker/staging-frontend.monetcap.com/dist"'
 
-                    slackSend (color: '#7851a9', message: "DEPLOYED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL}) @ staging-frontend.example.com")
+                    slackSend (color: '#7851a9', message: "DEPLOYED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL}) @ staging-frontend.monetcap.com")
                 }
             }
         }
         stage('Deploy Production') {
             when { branch 'master' }
             steps {
-                withCredentials([sshUserPrivateKey(credentialsId: "credential-id", keyFileVariable: 'keyfile')]) {
-                    sh 'ssh -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} runner@example.com "rm -rf /docker/prod-frontend.example.com/dist"'
-                    sh 'scp -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} -r ./dist "runner@example.com:/docker/prod-frontend.example.com/dist"'
+                withCredentials([sshUserPrivateKey(credentialsId: "89b383bf-8c04-4269-9df1-8a5ab97c579f", keyFileVariable: 'keyfile')]) {
+                    sh 'ssh -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} runner@ragnarok.monetcap.com "rm -rf /docker/prod-frontend.monetcap.com/dist"'
+                    sh 'scp -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} -r ./dist "runner@ragnarok.monetcap.com:/docker/prod-frontend.monetcap.com/dist"'
 
-                    slackSend (color: '#7851a9', message: "DEPLOYED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL}) @ prod-frontend.example.com")
+                    slackSend (color: '#7851a9', message: "DEPLOYED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL}) @ prod-frontend.monetcap.com")
                 }
             }
         }
