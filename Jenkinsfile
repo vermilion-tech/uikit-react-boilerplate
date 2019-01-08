@@ -14,6 +14,7 @@ pipeline {
                 slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
                 sh 'npm install'
                 sh 'npm run build:dev'
+                sh 'npm run build:storybook'
             }
         }
         stage('Build Production') {

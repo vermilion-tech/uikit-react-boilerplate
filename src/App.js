@@ -1,5 +1,4 @@
 import React from 'react'
-import './stylesheets/main.scss'
 
 export default (props) => {
   return (
@@ -7,7 +6,6 @@ export default (props) => {
       <nav className='uk-position-absolute uk-width-expand uk-navbar-container' data-uk-navbar>
         <div className='uk-navbar-left'>
           <div className='uk-navbar-item'>
-
             <a href='#' className='uk-navbar-item uk-navbar-logo uk-width-small'>
               <img data-src='src/images/monet-cap-logo.png' alt='logo' width='1920' height='1080' data-uk-img />
             </a>
@@ -98,10 +96,10 @@ export default (props) => {
         </div>
       </div>
 
-      <div className='uk-section uk-section-large uk-background-cover uk-background-norepeat' data-src='src/images/teal-bg-image-2.png' data-uk-img>
+      <div className='uk-section uk-section-small uk-background-cover uk-background-norepeat' data-src='src/images/teal-bg-image-2.png' data-uk-img>
         <div className='uk-container'>
           <div className='uk-margin-large'>
-            <h1 className='uk-text-center uk-light'>What People Say</h1>
+            <h1 className='uk-text-center uk-text-primary'>What People Say</h1>
           </div>
 
           <div data-uk-slider>
