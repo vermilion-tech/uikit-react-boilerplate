@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy Staging') {
             when { branch 'development' }
             steps {
-                withCredentials([sshUserPrivateKey(credentialsId: "89b383bf-8c04-4269-9df1-8a5ab97c579f", keyFileVariable: 'keyfile')]) {
+                withCredentials([sshUserPrivateKey(credentialsId: "47e214c3-29c0-49b5-bb72-77d143188c35", keyFileVariable: 'keyfile')]) {
                     sh 'ssh -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} runner@ragnarok.monetcap.com "rm -rf /docker/staging-frontend.monetcap.com/dist"'
                     sh 'scp -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} -r ./dist "runner@ragnarok.monetcap.com:/docker/staging-frontend.monetcap.com/dist"'
 
