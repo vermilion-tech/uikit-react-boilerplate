@@ -1,5 +1,10 @@
 import React from 'react'
 
+import MonetcapLogo from 'Images/monet-cap-logo.png'
+import HeroImage from 'Images/hero.jpg'
+import BackgroundImage1 from 'Images/teal-bg-image-1.png'
+import BackgroundImage2 from 'Images/teal-bg-image-2.png'
+
 export default (props) => {
   return (
     <React.Fragment>
@@ -7,7 +12,7 @@ export default (props) => {
         <div className='uk-navbar-left'>
           <div className='uk-navbar-item'>
             <a href='#' className='uk-navbar-item uk-navbar-logo uk-width-small'>
-              <img data-src='src/images/monet-cap-logo.png' alt='logo' width='1920' height='1080' data-uk-img />
+              <img data-src={MonetcapLogo} alt='logo' width='1920' height='1080' data-uk-img />
             </a>
 
           </div>
@@ -27,28 +32,28 @@ export default (props) => {
         </div>
       </nav>
 
-      <div className='uk-height-1-1 uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-background-norepeat uk-background-cover' data-src='https://via.placeholder.com/1920x1080?text=%20' width='1920' height='1080' data-uk-img>
+      <div className='uk-height-1-1 uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-background-norepeat uk-background-cover' data-src={HeroImage} width='1920' height='1080' data-uk-img>
         <div className='uk-padding'>
-          <div>
+          <div className='uk-light'>
             <h1>We know your time is important.</h1>
           </div>
 
           <div className='uk-child-width-1-2@s' data-uk-grid>
 
-            <div>
+            <div className='uk-light'>
               <p className='uk-margin-small-right'>
                 Monet Capital offers small business loans from $10,000 - $250,000, Apply now and we'll get you the money needed to fund your business within 24 hours!
               </p>
             </div>
 
             <div>
-              <form className='uk-flex uk-flex-right'>
+              <form className='uk-flex uk-flex-middle uk-flex-right'>
                 <select className='uk-select uk-width-expand'>
                   <option>Option 1</option>
                   <option>Option 2</option>
                   <option>Option 3</option>
                 </select>
-                <button className='uk-button uk-button-primary uk-width-small' type='button'>Apply Now</button>
+                <button className='uk-button uk-button-primary uk-flex-1' type='button'>Apply Now</button>
               </form>
             </div>
 
@@ -96,7 +101,7 @@ export default (props) => {
         </div>
       </div>
 
-      <div className='uk-section uk-section-small uk-background-cover uk-background-norepeat' data-src='src/images/teal-bg-image-2.png' data-uk-img>
+      <div className='uk-section uk-section-small uk-background-cover uk-background-norepeat' data-src={BackgroundImage2} data-uk-img>
         <div className='uk-container'>
           <div className='uk-margin-large'>
             <h1 className='uk-text-center uk-text-primary'>What People Say</h1>
@@ -159,17 +164,17 @@ export default (props) => {
         </div>
       </div>
 
-      <div className='uk-section uk-section-large uk-background-cover uk-background-norepeat' data-src='src/images/teal-bg-image-1.png' data-uk-img>
+      <div className='uk-section uk-section-large uk-background-cover uk-background-norepeat' data-src={BackgroundImage1} data-uk-img>
         <div className='uk-container'>
           <div className='uk-margin-large'>
             <h1 className='uk-text-center uk-light'>Partners</h1>
           </div>
-          <div className="uk-child-width-1-2@m uk-grid-match uk-grid" uk-grid>
+          <div className="uk-child-width-1-2@m uk-grid-match uk-grid" data-uk-grid>
             <div>
               <div className="uk-card uk-card-default uk-card-body">
                 <h3 className="uk-card-title">Lorem ipsum</h3>
-                  <p className="uk-margin-bottom uk-text-left">Example card text for
-                  partners section, let's make this a few lines.</p>
+                <p className="uk-margin-bottom uk-text-left">Example card text for
+                partners section, let's make this a few lines.</p>
               </div>
             </div>
             <div>

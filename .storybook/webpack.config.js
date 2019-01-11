@@ -4,7 +4,8 @@ module.exports = {
   resolve: {
     alias: {
       Components: path.resolve(__dirname, '../src/components/'),
-      Stylesheets: path.resolve(__dirname, '../src/stylesheets/')
+      Stylesheets: path.resolve(__dirname, '../src/stylesheets/'),
+      Images: path.resolve(__dirname, './src/images/')
     }
   },
   module: {
@@ -33,7 +34,8 @@ module.exports = {
             options: {
               limit: 8192,
               name: '[name].[ext]',
-              fallback: 'file-loader'
+              fallback: 'file-loader',
+              outputPath: 'images'
             }
           }
         ]
