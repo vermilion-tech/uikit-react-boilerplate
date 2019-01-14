@@ -10,7 +10,7 @@ import 'Stylesheets/main.scss'
 
 // Decorators
 const UKSectionContainerDecorator = ({ children }) => (
-  <div className='uk-section'>
+  <div className='uk-section uk-background-default'>
     <div className='uk-container'>
       { children }
     </div>

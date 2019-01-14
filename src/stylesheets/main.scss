@@ -19,7 +19,8 @@ html, body, #app {
 // 3. Import UIKit variable overrides.
 @import
   './components/variables/accordion',
-  './components/variables/card';
+  './components/variables/card',
+  './components/variables/tab';
 
 // 4. Import framework variables and mixins.
 @import
@@ -29,7 +30,8 @@ html, body, #app {
 // 5. Import mixin overrides.
 @import
     './components/mixins/accordion',
-    './components/mixins/card';
+    './components/mixins/card',
+    './components/mixins/tab';;
 
 // 6. Import main framework styles.
 @import

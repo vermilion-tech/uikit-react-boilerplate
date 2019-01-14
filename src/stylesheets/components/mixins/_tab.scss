@@ -1,0 +1,3 @@
+@mixin hook-tab-item-active() {
+  background-color: lighten($monet-teal, 5%);
+}
