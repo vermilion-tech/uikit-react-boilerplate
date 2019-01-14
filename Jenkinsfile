@@ -37,7 +37,7 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} runner@ragnarok.monetcap.com "rm -rf /docker/staging-frontend.monetcap.com/dist"'
                     sh 'scp -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} -r ./dist "runner@ragnarok.monetcap.com:/docker/staging-frontend.monetcap.com/dist"'
 
-                    slackSend (color: '#7851a9', message: "DEPLOYED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL}) @ staging-frontend.monetcap.com")
+                    slackSend (color: '#7851a9', message: "DEPLOYED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL}) @ staging-frontend.monetcap.com | staging-frontend.monetcap.com/storybook")
                 }
             }
         }
