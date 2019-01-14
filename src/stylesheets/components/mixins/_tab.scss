@@ -1,17 +1,10 @@
 @mixin hook-tab-item-active() {
-  background-color: lighten($monet-teal, 5%);
+  background-color: $monet-teal;
 }
 
-@mixin hook-tab-item() {
-  // @media(max-width: 960px) {
-  //   font-size: .75rem
-  // }
-  //
-  // @media(max-width: 750px) {
-  //   font-size: .25rem
-  // }
-  //
-  // @media(max-width: 640px) {
-  //   font-size: .65rem
-  // }
+@mixin hook-tab() {
+  > li {
+    width: 100%;
+    flex: 100%;
+  }
 }

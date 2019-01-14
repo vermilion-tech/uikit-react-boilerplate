@@ -24,6 +24,14 @@ $monet-alt-colors: (
   white: $monet-white
 );
 
+// TODO: move to persay an 'iterators' file in base/abstracts
+@each $color, $value in $monet-colors {
+  // text colors
+  .monet-text-#{$color} {
+    color: $value;
+  }
+}
+
 // Overriding global UIKit variables.
 $global-primary-background: $monet-teal;
 $global-font-family: "Montserrat", Arial, sans-serif !default;
