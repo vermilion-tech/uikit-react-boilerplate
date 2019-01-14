@@ -8,6 +8,8 @@ UIkit.use(Icons)
 
 import 'Stylesheets/main.scss'
 
+import { withViewport } from '@storybook/addon-viewport'
+
 // Decorators
 const UKSectionContainerDecorator = ({ children }) => (
   <div className='uk-section uk-background-default'>
@@ -19,8 +21,19 @@ const UKSectionContainerDecorator = ({ children }) => (
 
 import MultiStepForm from 'Components/MultiStepForm';
 storiesOf('MultiStepForm', module)
-  .add('Default', () => (
+  .addDecorator(withViewport())
+  .add('Default - 1920x1080', () => (
     <UKSectionContainerDecorator>
       <MultiStepForm />
     </UKSectionContainerDecorator>
-  ));
+  ), { viewport: 'res19201080' })
+  .add('Default - iPad', () => (
+    <UKSectionContainerDecorator>
+      <MultiStepForm />
+    </UKSectionContainerDecorator>
+  ), { viewport: 'ipad'})
+  .add('Default - iPhone X', () => (
+    <UKSectionContainerDecorator>
+      <MultiStepForm />
+    </UKSectionContainerDecorator>
+  ), { viewport: 'iphonex'});
