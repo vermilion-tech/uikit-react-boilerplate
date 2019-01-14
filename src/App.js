@@ -1,37 +1,17 @@
 import React from 'react'
 
-import MonetcapLogo from 'Images/monet-cap-logo.png'
 import HeroImage from 'Images/hero.jpg'
 import BackgroundImage1 from 'Images/teal-bg-image-1.png'
 import BackgroundImage2 from 'Images/teal-bg-image-2.png'
 
+import Navbar from './components/Navbar'
+import IconCarousel from './components/IconCarousel'
+
 export default (props) => {
   return (
     <React.Fragment>
-      <nav className='uk-position-absolute uk-width-expand uk-navbar-container' data-uk-navbar>
-        <div className='uk-navbar-left'>
-          <div className='uk-navbar-item'>
-            <a href='#' className='uk-navbar-item uk-navbar-logo uk-width-small'>
-              <img data-src={MonetcapLogo} alt='logo' width='1920' height='1080' data-uk-img />
-            </a>
 
-          </div>
-        </div>
-
-        <div className='uk-navbar-right uk-visible@s'>
-          <ul className='uk-navbar-nav'>
-            <li> <a href='#'>
-              <button className='uk-button uk-button-primary uk-border-rounded'>Contact Us</button>
-            </a> </li>
-
-            <li> <a href='#'>
-              <i className='material-icons uk-margin-small-right uk-text-primary'>phone</i>
-              1-800-377-5554
-            </a> </li>
-          </ul>
-        </div>
-      </nav>
-
+    <Navbar />
       <div className='uk-height-1-1 uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-background-norepeat uk-background-cover' data-src={HeroImage} width='1920' height='1080' data-uk-img>
         <div className='uk-padding'>
           <div className='uk-light'>
@@ -70,34 +50,8 @@ export default (props) => {
         <div className='uk-container uk-text-center'>
           <h1 className='uk-margin-large uk-text-primary'>Some Industries We Serve</h1>
 
-          <div data-uk-slider>
-            <ul className='uk-slider-items uk-child-width-1-3@s uk-grid uk-margin'>
-              <li>
-                <div className='uk-border-1'>
-                  <img data-src='https://via.placeholder.com/1920x1080?text=%20' width='1920' height='1080' alt='' data-uk-img />
-                  <div className='uk-padding-small uk-text-primary'>Lorem Ipsum</div>
-                </div>
-              </li>
-              <li>
-                <div className='uk-border-1'>
-                  <img data-src='https://via.placeholder.com/1920x1080?text=%20' width='1920' height='1080' alt='' data-uk-img />
-                  <div className='uk-padding-small uk-text-primary'>Lorem Ipsum</div>
-                </div>
-              </li>
-              <li>
-                <div className='uk-border-1'>
-                  <img data-src='https://via.placeholder.com/1920x1080?text=%20' width='1920' height='1080' alt='' data-uk-img />
-                  <div className='uk-padding-small uk-text-primary'>Lorem Ipsum</div>
-                </div>
-              </li>
-            </ul>
+          <IconCarousel />
 
-            <div className="uk-flex uk-flex-center uk-flex-around uk-flex-row">
-              <a href="#" style={{color: "rgb(102, 102, 102)"}} data-uk-icon='chevron-left' data-uk-slider-item="previous" />
-              <ul className="uk-slider-nav uk-dotnav" />
-              <a href="#" style={{color: "rgb(102, 102, 102)"}} data-uk-icon='chevron-right' data-uk-slider-item="next" />
-            </div>
-          </div>
         </div>
       </div>
 
