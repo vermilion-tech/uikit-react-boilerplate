@@ -58,7 +58,7 @@ export default (props) => {
       <div className='uk-section uk-section-small uk-background-cover uk-background-norepeat' data-src={BackgroundImage2} data-uk-img>
         <div className='uk-container'>
           <div className='uk-margin-large'>
-            <h1 className='uk-text-center uk-text-primary'>What People Say</h1>
+            <h1 className='uk-text-center uk-light'>What People Say</h1>
           </div>
 
           <div data-uk-slider>

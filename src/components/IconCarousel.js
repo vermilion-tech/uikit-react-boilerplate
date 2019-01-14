@@ -9,38 +9,38 @@ import IconRetail from 'Images/icon-retail.png';
 
 const IconCarousel = (props) => (
   <div data-uk-slider>
+  <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
     <ul className='uk-slider-items uk-child-width-1-3@s uk-grid uk-margin'>
       <li>
         <img data-src={IconRestaurant} alt='' data-uk-img />
-        <div className='uk-padding-small uk-text-primary'>Lorem Ipsum</div>
+        <div className='uk-padding-small uk-text-primary'>Restaurants</div>
       </li>
       <li>
         <img data-src={IconWholesale} alt='' data-uk-img />
-        <div className='uk-padding-small uk-text-primary'>Lorem Ipsum</div>
+        <div className='uk-padding-small uk-text-primary'>Wholesale</div>
       </li>
       <li>
         <img data-src={IconManufacturing} alt='' data-uk-img />
-        <div className='uk-padding-small uk-text-primary'>Lorem Ipsum</div>
+        <div className='uk-padding-small uk-text-primary'>Manufacturing</div>
       </li>
       <li>
         <img data-src={IconConstruction} alt='' data-uk-img />
-        <div className='uk-padding-small uk-text-primary'>Lorem Ipsum</div>
+        <div className='uk-padding-small uk-text-primary'>Construction</div>
       </li>
       <li>
         <img data-src={IconTrucking} alt='' data-uk-img />
-        <div className='uk-padding-small uk-text-primary'>Lorem Ipsum</div>
+        <div className='uk-padding-small uk-text-primary'>Trucking</div>
       </li>
       <li>
         <img data-src={IconRetail} alt='' data-uk-img />
-        <div className='uk-padding-small uk-text-primary'>Lorem Ipsum</div>
+        <div className='uk-padding-small uk-text-primary'>Retail</div>
       </li>
     </ul>
 
-    <div className="uk-flex uk-flex-center uk-flex-around uk-flex-row">
-      <a href="#" style={{color: "rgb(102, 102, 102)"}} data-uk-icon='chevron-left' data-uk-slider-item="previous" />
-      <ul className="uk-slider-nav uk-dotnav" />
-      <a href="#" style={{color: "rgb(102, 102, 102)"}} data-uk-icon='chevron-right' data-uk-slider-item="next" />
-    </div>
+
+      <a href="#" class="uk-position-center-left" style={{color: "rgb(0, 129, 152)"}} data-uk-icon='icon: triangle-left; ratio: 3;' uk-slidenav-previous data-uk-slider-item="previous" />
+      <a href="#" class="uk-position-center-right" style={{color: "rgb(0, 129, 152)"}} data-uk-icon='icon: triangle-right; ratio: 3;' uk-slidenav-next data-uk-slider-item="next" />
+      </div>
   </div>
 );
 
