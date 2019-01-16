@@ -1,11 +1,6 @@
 import React from 'react';
-
-const Radio = (props) => (
-  <div>
-    <input className='uk-radio uk-margin-small-right' type='radio' name='radio' />
-    <label>Option {props.index}</label>
-  </div>
-)
+import Lorem from 'react-lorem-component'
+import LoremIpsum from 'lorem-ipsum'
 
 const LeftRightArrows = (props) => (
   <div className='uk-position-bottom-right uk-padding'>
@@ -14,11 +9,18 @@ const LeftRightArrows = (props) => (
   </div>
 )
 
+const FormStep = (props) => (
+  <div>
+    <h2 className='monet-text-gold'>{props.heading || LoremIpsum().replace('.', '?')}</h2>
+    {props.content || <Lorem seed={props.index} count={1} />}
+  </div>
+)
+
 const MultiStepForm = (props) => (
   <div className='multistepform uk-box-shadow-medium uk-flex'>
     {/* tabs */}
     <div className=' uk-background-muted uk-width-1-4@s'>
-      <ul className='uk-tab-left uk-margin-remove-bottom' data-uk-tab>
+      <ul className='uk-tab-left uk-margin-remove-bottom' data-uk-tab='connect: #form-switcher'>
         <li> <a href='#'>$0,000 - $0,000,000</a> </li>
         <li> <a href='#'>How soon?</a> </li>
         <li> <a href='#'>Years in business</a> </li>
@@ -30,17 +32,11 @@ const MultiStepForm = (props) => (
 
     {/* form content */}
     <div className='uk-background-default uk-padding uk-width-expand uk-position-relative'>
-      <h2 className='monet-text-gold'>Lorem ipsum dolor sit amet?</h2>
-      <form className='uk-margin-large-left'>
-        {/* Radios */}
-        <div className='uk-flex uk-flex-column' data-uk-margin>
-          {
-            Array.from({ length: 4 }, (_, i) => <Radio index={i+1} />)
-          }
-        </div>
-
-        <LeftRightArrows />
-      </form>
+      <ul id='form-switcher' className='uk-switcher uk-margin'>
+        {
+          Array.from({ length: 6}, (_, i) => <li key={i}> <FormStep index={i} /> </li>)
+        }
+      </ul>
     </div>
   </div>
 );

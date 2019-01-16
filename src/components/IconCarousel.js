@@ -8,8 +8,8 @@ import IconTrucking from 'Images/icon-trucking.png';
 import IconRetail from 'Images/icon-retail.png';
 
 const IconCarousel = (props) => (
-  <div class="slider-carousel" data-uk-slider>
-  <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
+  <div className="slider-carousel" data-uk-slider>
+  <div className="uk-position-relative uk-visible-toggle" tabIndex="-1">
     <ul className='uk-slider-items uk-child-width-1-3@s uk-grid uk-margin'>
       <li>
         <img data-src={IconRestaurant} alt='' data-uk-img />
@@ -38,8 +38,8 @@ const IconCarousel = (props) => (
     </ul>
 
 
-      <a href="#" class="uk-position-center-left" style={{color: "rgb(0, 129, 152)"}} data-uk-icon='icon: triangle-left; ratio: 3;' uk-slidenav-previous data-uk-slider-item="previous" />
-      <a href="#" class="uk-position-center-right" style={{color: "rgb(0, 129, 152)"}} data-uk-icon='icon: triangle-right; ratio: 3;' uk-slidenav-next data-uk-slider-item="next" />
+      <a href="#" className="uk-position-center-left" style={{color: "rgb(0, 129, 152)"}} data-uk-icon='icon: triangle-left; ratio: 3;' data-uk-slider-item="previous" />
+      <a href="#" className="uk-position-center-right" style={{color: "rgb(0, 129, 152)"}} data-uk-icon='icon: triangle-right; ratio: 3;' data-uk-slider-item="next" />
       </div>
   </div>
 );
