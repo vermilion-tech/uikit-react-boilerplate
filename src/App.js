@@ -6,6 +6,7 @@ import BackgroundImage2 from 'Images/teal-bg-image-2.png'
 
 import Navbar from './components/Navbar'
 import IconCarousel from './components/IconCarousel'
+import Flipcards from './components/Flipcards'
 
 export default (props) => {
   return (
@@ -61,31 +62,8 @@ export default (props) => {
             <h1 className='uk-text-center uk-light'>What People Say</h1>
           </div>
 
-          <div data-uk-slider>
-            <ul className='uk-slider-items uk-child-width-1-3@s uk-grid uk-margin'>
-              <li>
-                <div className='uk-border-1'>
-                  <img data-src='https://via.placeholder.com/1920x1080/888?text=%20' width='1920' height='1080' alt='' data-uk-img />
-                </div>
-              </li>
-              <li>
-                <div className='uk-border-1'>
-                  <img data-src='https://via.placeholder.com/1920x1080/888?text=%20' width='1920' height='1080' alt='' data-uk-img />
-                </div>
-              </li>
-              <li>
-                <div className='uk-border-1'>
-                  <img data-src='https://via.placeholder.com/1920x1080/888?text=%20' width='1920' height='1080' alt='' data-uk-img />
-                </div>
-              </li>
-            </ul>
-
-            <div className="uk-flex uk-flex-center uk-flex-around uk-flex-row">
-              <a href="#" style={{color: "rgb(102, 102, 102)"}} data-uk-icon='chevron-left' data-uk-slider-item="previous" />
-              <ul className="uk-slider-nav uk-dotnav" />
-              <a href="#" style={{color: "rgb(102, 102, 102)"}} data-uk-icon='chevron-right' data-uk-slider-item="next" />
-            </div>
-          </div>
+          <Flipcards />
+          
         </div>
       </div>
 

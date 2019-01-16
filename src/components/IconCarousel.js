@@ -8,7 +8,7 @@ import IconTrucking from 'Images/icon-trucking.png';
 import IconRetail from 'Images/icon-retail.png';
 
 const IconCarousel = (props) => (
-  <div data-uk-slider>
+  <div class="slider-carousel" data-uk-slider>
   <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
     <ul className='uk-slider-items uk-child-width-1-3@s uk-grid uk-margin'>
       <li>
