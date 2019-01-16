@@ -1,5 +1,3 @@
-def slackResponse = ""
-
 pipeline {
     agent {
         docker {
@@ -13,7 +11,7 @@ pipeline {
         stage('Build Staging') {
             when { branch 'development' }
             steps {
-                slackResponse = slackSend (channel: 'jenkins-ci', color: '#FFFF00', message: "Started: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'\n(${env.BUILD_URL})")
+                slackSend (color: '#FFFF00', message: "Started: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'\n(${env.BUILD_URL})")
                 sh 'npm install'
                 sh 'npm run build:dev'
                 sh 'npm run build:storybook'
@@ -22,7 +20,7 @@ pipeline {
         stage('Build Production') {
             when { branch 'master' }
             steps {
-                slackSend (channel: slackResponse.threadId, color: '#FFFF00', message: "Started: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'\n(${env.BUILD_URL})")
+                slackSend (color: '#FFFF00', message: "Started: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'\n(${env.BUILD_URL})")
                 sh 'npm install'
                 sh 'npm run build'
             }
@@ -39,7 +37,7 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} runner@ragnarok.monetcap.com "rm -rf /docker/staging-frontend.monetcap.com/dist"'
                     sh 'scp -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} -r ./dist "runner@ragnarok.monetcap.com:/docker/staging-frontend.monetcap.com/dist"'
 
-                    slackSend (channel: slackResponse.threadId, color: '#7851a9', message: "Deployed: staging-frontend.monetcap.com | staging-frontend.monetcap.com/storybook")
+                    slackSend (color: '#7851a9', message: "Deployed: staging-frontend.monetcap.com | staging-frontend.monetcap.com/storybook")
                 }
             }
         }
@@ -50,17 +48,17 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} runner@ragnarok.monetcap.com "rm -rf /docker/prod-frontend.monetcap.com/dist"'
                     sh 'scp -o StrictHostKeyChecking=No -o UserKnownHostsFile=/dev/null -i ${keyfile} -r ./dist "runner@ragnarok.monetcap.com:/docker/prod-frontend.monetcap.com/dist"'
 
-                    slackSend (channel: slackResponse.threadId, color: '#7851a9', message: "Deployed: prod-frontend.monetcap.com")
+                    slackSend (color: '#7851a9', message: "Deployed: prod-frontend.monetcap.com")
                 }
             }
         }
     }
     post {
         failure {
-            slackSend (channel: slackResponse.threadId, color: '#FF0000', message: "Failed! '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+            slackSend (color: '#FF0000', message: "Failed! '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
         }
         success {
-            slackSend (channel: slackResponse.threadId, color: '#00FF00', message: "Success! '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+            slackSend (color: '#00FF00', message: "Success! '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
         }
     }
 }
