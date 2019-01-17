@@ -12,7 +12,7 @@ const Navbar = (props) => (
     </div>
     <ul className='uk-navbar-nav uk-hidden@m'>
       <li>
-      <a href='#'>
+      <a href='tel:1-800-377-5554'>
         <i className='material-icons md-36 uk-text-primary'>phone</i>
       </a>
       </li>
@@ -29,7 +29,7 @@ const Navbar = (props) => (
         <button className='uk-button uk-button-primary uk-border-rounded'>Contact Us</button>
       </a> </li>
 
-      <li> <a href='#'>
+      <li> <a href='tel:1-800-377-5554'>
         <i className='material-icons uk-margin-small-right uk-text-primary'>phone</i>
         1-800-377-5554
       </a> </li>
