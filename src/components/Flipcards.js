@@ -7,30 +7,30 @@ import TestimonialHenry from 'Images/Henry M.png';
 const Flipcards = (props) => (
   <div data-uk-slider>
     <ul className='uk-slider-items uk-child-width-1-3@s uk-grid uk-margin'>
-      <li class="uk-text-center">
-          <div class="uk-inline-clip uk-transition-toggle" tabIndex="0">
+      <li className="uk-text-center">
+          <div className="uk-inline-clip uk-transition-toggle" tabIndex="0">
               <img data-src={TestimonialRyan} alt='' data-uk-img />
-              <div class="uk-transition-fade uk-position-cover uk-overlay uk-overlay-default uk-text-left">
+              <div className="uk-transition-fade uk-position-cover uk-overlay uk-overlay-default uk-text-left">
                   <p>"Unlike traditional lenders, the people at Monet are extremely friendly and helpful. Plus, they specifically work with small businesses so their funding options are much more practical."</p>
-                  <p class="uk-text-right uk-position-bottom uk-text-uppercase uk-text-bold uk-padding-small">Ryan T.</p>
+                  <p className="uk-text-right uk-position-bottom uk-text-uppercase uk-text-bold uk-padding-small">Ryan T.</p>
               </div>
           </div>
       </li>
-      <li class="uk-text-center">
-          <div class="uk-inline-clip uk-transition-toggle" tabIndex="0">
+      <li className="uk-text-center">
+          <div className="uk-inline-clip uk-transition-toggle" tabIndex="0">
               <img data-src={TestimonialClaire} alt='' data-uk-img />
-              <div class="uk-transition-fade uk-position-cover uk-overlay uk-overlay-default uk-text-left">
+              <div className="uk-transition-fade uk-position-cover uk-overlay uk-overlay-default uk-text-left">
                   <p>"Monet Capital gave me more than a loan, they gave me a sense of security and hope for the future."</p>
-                  <p class="uk-text-right uk-position-bottom uk-text-uppercase uk-text-bold uk-padding-small">Claire E.</p>
+                  <p className="uk-text-right uk-position-bottom uk-text-uppercase uk-text-bold uk-padding-small">Claire E.</p>
               </div>
           </div>
       </li>
-      <li class="uk-text-center">
-          <div class="uk-inline-clip uk-transition-toggle" tabIndex="0">
+      <li className="uk-text-center">
+          <div className="uk-inline-clip uk-transition-toggle" tabIndex="0">
               <img data-src={TestimonialHenry} alt='' data-uk-img />
-              <div class="uk-transition-fade uk-position-cover uk-overlay uk-overlay-default uk-text-left">
+              <div className="uk-transition-fade uk-position-cover uk-overlay uk-overlay-default uk-text-left">
                   <p>"My business partner and I needed working capital to cover payroll during the slow months and focus on what was really important, the busy season ahead!"</p>
-                  <p class="uk-text-right uk-position-bottom uk-text-uppercase uk-text-bold uk-padding-small">Henry M.</p>
+                  <p className="uk-text-right uk-position-bottom uk-text-uppercase uk-text-bold uk-padding-small">Henry M.</p>
               </div>
           </div>
       </li>

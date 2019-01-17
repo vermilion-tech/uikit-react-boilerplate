@@ -34,6 +34,7 @@ $monet-alt-colors: (
 
 // Overriding global UIKit variables.
 $global-primary-background: $monet-teal;
+$global-secondary-background: $monet-pale-grey;
 $global-font-family: "Montserrat", Arial, sans-serif !default;
 // Overriden to restore full opacity.
 $inverse-global-color: $monet-white;
@@ -42,4 +43,8 @@ $inverse-global-color: $monet-white;
 $base-heading-font-weight: 700;
 
 // Navbar color
-$navbar-background: $monet-pale-grey;
+$navbar-background: $global-secondary-background;
+
+// Overriding offcanvas bar defaults.
+$offcanvas-bar-color-mode: none;
+$offcanvas-bar-width: 340px;
