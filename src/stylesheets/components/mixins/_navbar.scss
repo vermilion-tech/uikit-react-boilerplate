@@ -1,4 +1,6 @@
 @mixin hook-nav-primary {
+  background: $global-primary-background;
+  height: 100%;
 
   li {
     background: $monet-gold;
