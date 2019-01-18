@@ -4,6 +4,7 @@ import HeroImage from 'Images/hero.jpg'
 import BackgroundImage1 from 'Images/teal-bg-image-1.png'
 import BackgroundImage2 from 'Images/teal-bg-image-2.png'
 
+import MultiStepForm from './components/MultiStepForm'
 import Navbar from './components/Navbar'
 import IconCarousel from './components/IconCarousel'
 import Flipcards from './components/Flipcards'
@@ -11,8 +12,7 @@ import Flipcards from './components/Flipcards'
 export default (props) => {
   return (
     <React.Fragment>
-
-    <Navbar />
+      <Navbar />
       <div className='uk-height-1-1 uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-background-norepeat uk-background-cover' data-src={HeroImage} width='1920' height='1080' data-uk-img>
         <div className='uk-padding'>
           <div className='uk-light'>
@@ -34,7 +34,12 @@ export default (props) => {
                   <option>Option 2</option>
                   <option>Option 3</option>
                 </select>
-                <button className='uk-button uk-button-primary uk-flex-1' type='button'>Apply Now</button>
+                <button data-uk-toggle='#apply-now-modal' className='uk-button uk-button-primary uk-flex-1' type='button'>Apply Now</button>
+                <div id='apply-now-modal' data-uk-modal>
+                  <div className='uk-modal-dialog'>
+                    <MultiStepForm />
+                  </div>
+                </div>
               </form>
             </div>
 
