@@ -44,7 +44,8 @@ html, body, #app {
 
 // 7. Import Base styles.
 @import
-  './base/fonts';
+  './base/fonts',
+  './base/typography';
 
 // TODO: Move this to a mixin or utility or use hook.
 .uk-border-1 {

@@ -8,6 +8,7 @@ import MultiStepForm from './components/MultiStepForm'
 import Navbar from './components/Navbar'
 import IconCarousel from './components/IconCarousel'
 import Flipcards from './components/Flipcards'
+import IconGrid from './components/IconGrid'
 
 export default (props) => {
   return (
@@ -137,6 +138,8 @@ export default (props) => {
             </div>
 
           </div>
+
+          <IconGrid />
         </div>
       </div>
     </React.Fragment>
