@@ -9,6 +9,7 @@ import Navbar from './components/Navbar'
 import IconCarousel from './components/IconCarousel'
 import Flipcards from './components/Flipcards'
 import IconGrid from './components/IconGrid'
+import Accordion from './components/Accordion'
 
 export default (props) => {
   return (
@@ -79,26 +80,9 @@ export default (props) => {
             <h1 className='uk-text-center uk-text-primary'>About Us</h1>
           </div>
 
-          <ul data-uk-accordion>
-            <li>
-              <a className='uk-accordion-title uk-text-primary uk-padding' href='#'>Item 1</a>
-              <div className='uk-accordion-content uk-padding'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-            </li>
-            <li>
-              <a className='uk-accordion-title uk-text-primary uk-padding' href='#'>Item 2</a>
-              <div className='uk-accordion-content uk-padding'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-            </li>
-            <li>
-              <a className='uk-accordion-title uk-text-primary uk-padding' href='#'>Item 3</a>
-              <div className='uk-accordion-content uk-padding'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-            </li>
-          </ul>
+          <Accordion />
+
+
         </div>
       </div>
 
