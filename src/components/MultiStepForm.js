@@ -23,12 +23,16 @@ const MultiStepForm = (props) => (
     {/* tabs */}
     <div className=' uk-background-muted uk-width-1-4@s'>
       <ul className='uk-tab uk-tab-left uk-margin-remove-bottom' data-uk-switcher='connect: .form-switcher'>
-        <li> <a href='#'>$0,000 - $0,000,000</a> </li>
-        <li> <a href='#'>How soon?</a> </li>
-        <li> <a href='#'>Years in business</a> </li>
-        <li> <a href='#'>Monthly revenue</a> </li>
-        <li> <a href='#'>Industry</a> </li>
-        <li> <a href='#'>Contact information</a> </li>
+        {
+          Array.from({ length: 6 }, (_, i) => (
+            <li key={i}>
+              <a href='#'>
+                <span className='uk-text-uppercase uk-text-small uk-visible@s'>{LoremIpsum({count: 2, units: 'words'})}</span>
+                <span className='uk-hidden@s' data-uk-icon='icon: heart;'/>
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
 

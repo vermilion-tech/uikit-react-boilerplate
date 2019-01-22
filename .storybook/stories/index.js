@@ -23,17 +23,11 @@ import MultiStepForm from 'Components/MultiStepForm';
 storiesOf('MultiStepForm', module)
   .addDecorator(withViewport())
   .add('Default - 1920x1080', () => (
-    <UKSectionContainerDecorator>
-      <MultiStepForm />
-    </UKSectionContainerDecorator>
+    <MultiStepForm />
   ), { viewport: 'res19201080' })
   .add('Default - iPad', () => (
-    <UKSectionContainerDecorator>
-      <MultiStepForm />
-    </UKSectionContainerDecorator>
+    <MultiStepForm />
   ), { viewport: 'ipad'})
   .add('Default - iPhone X', () => (
-    <UKSectionContainerDecorator>
-      <MultiStepForm />
-    </UKSectionContainerDecorator>
+    <MultiStepForm />
   ), { viewport: 'iphonex'});
