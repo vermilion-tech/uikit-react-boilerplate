@@ -22,12 +22,12 @@ const MultiStepForm = (props) => (
   <div className='multistepform uk-box-shadow-medium uk-flex'>
     {/* tabs */}
     <div className=' uk-background-muted uk-width-1-4@s'>
-      <ul className='uk-tab uk-tab-left uk-margin-remove-bottom' data-uk-switcher='connect: .form-switcher'>
+      <ul className='uk-tab uk-tab-left uk-margin-remove-bottom' data-uk-switcher='connect: .form-switcher; animation: uk-animation-fade;'>
         {
           Array.from({ length: 6 }, (_, i) => (
             <li key={i}>
               <a href='#'>
-                <span className='uk-text-uppercase uk-text-small uk-visible@s'>{LoremIpsum({count: 2, units: 'words'})}</span>
+                <span className='uk-text-uppercase uk-text-small uk-visible@s'>{LoremIpsum({count: 2, units: 'words', words: ['lorem', 'ipsum', 'sumet', 'dolor', 'omnis', 'vitae', 'aute', 'irute', 'vive']})}</span>
                 <span className='uk-hidden@s' data-uk-icon='icon: heart;'/>
               </a>
             </li>
