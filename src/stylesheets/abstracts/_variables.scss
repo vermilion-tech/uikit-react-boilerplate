@@ -32,6 +32,9 @@ $monet-alt-colors: (
   }
 }
 
+.background-test {
+  background: $monet-dark-grey;
+}
 // Overriding global UIKit variables.
 $global-primary-background: $monet-teal;
 $global-secondary-background: $monet-pale-grey;
@@ -43,7 +46,7 @@ $inverse-global-color: $monet-white;
 $base-heading-font-weight: 700;
 
 // Navbar color
-$navbar-background: $global-secondary-background;
+$navbar-background: $inverse-global-color;
 
 // Overriding offcanvas bar defaults.
 $offcanvas-bar-color-mode: none;

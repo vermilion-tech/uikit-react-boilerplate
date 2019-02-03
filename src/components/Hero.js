@@ -39,10 +39,10 @@ export default class Hero extends React.Component {
   render() {
     return (
       <React.Fragment>
-      <div className='uk-height-1-1 uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-background-norepeat uk-background-cover uk-background-blend-multiply uk-background-primary' data-src={this.state.hero.hero_image} width='1920' height='1080' data-uk-img>
+      <div className='uk-height-1-1 uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-background-norepeat uk-background-cover uk-background-blend-overlay background-test' data-src={this.state.hero.hero_image} width='1920' height='1080' data-uk-img>
         <div className='uk-padding'>
           <div className='uk-light'>
-            <h1>{this.state.hero.hero_heading}</h1>
+            <h1 dangerouslySetInnerHTML={{__html: this.state.hero.hero_heading}}></h1>
           </div>
 
           <div className='uk-child-width-1-2@s' data-uk-grid>
