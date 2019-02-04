@@ -12,6 +12,7 @@ import Flipcards from './components/Flipcards'
 import HighlightCards from './components/HighlightCards'
 import IconGrid from './components/IconGrid'
 import Accordion from './components/Accordion'
+import Footer from './components/Footer'
 
 export default (props) => {
   return (
@@ -62,6 +63,14 @@ export default (props) => {
           <IconGrid />
         </div>
       </div>
+
+    <div className='uk-section uk-section-large uk-background-secondary'>
+      <div className='uk-container'>
+
+        <Footer />
+
+      </div>
+    </div>
     </React.Fragment>
 
   )

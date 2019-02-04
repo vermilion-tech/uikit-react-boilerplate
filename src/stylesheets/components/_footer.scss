@@ -1,0 +1,11 @@
+// Footer element styles.
+.footer {
+  li {
+    display: inline;
+  }
+
+  li + li::before {
+    content: " | ";
+    margin: 0 1em;
+  }
+}

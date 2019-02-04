@@ -13,6 +13,7 @@ html, body, #app {
 
 // 2. Import custom components.
 @import
+  './components/footer',
   './components/multistepform';
 
 // 3. Import UIKit variable overrides.
