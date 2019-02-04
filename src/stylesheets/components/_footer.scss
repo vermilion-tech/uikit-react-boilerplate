@@ -1,5 +1,5 @@
 // Footer element styles.
-.footer {
+.footer-detail {
   li {
     display: inline;
   }
@@ -8,4 +8,8 @@
     content: " | ";
     margin: 0 1em;
   }
+}
+
+.footer-disclaimer {
+  font-size: .75em;
 }
