@@ -61,6 +61,12 @@ export default (props) => {
           </div>
           <HighlightCards />
           <IconGrid />
+          <button data-uk-toggle='#partners-apply-modal' className='uk-align-center uk-width-large uk-button uk-button-alternate' type='button'>Sign up with us</button>
+          <div id='partners-apply-modal' data-uk-modal>
+            <div className='uk-modal-dialog'>
+              Loading..
+            </div>
+          </div>
         </div>
       </div>
 

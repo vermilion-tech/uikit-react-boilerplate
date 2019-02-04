@@ -53,7 +53,7 @@ export default class Hero extends React.Component {
             </div>
 
             <div>
-              <form className='uk-flex uk-flex-middle uk-flex-right'>
+              <form className='apply-now-trigger uk-flex uk-flex-middle uk-flex-right'>
                 <select className='uk-select uk-width-expand'>
                   <option>Option 1</option>
                   <option>Option 2</option>

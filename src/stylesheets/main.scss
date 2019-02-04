@@ -31,6 +31,7 @@ html, body, #app {
 // 5. Import mixin overrides.
 @import
     './components/mixins/accordion',
+    './components/mixins/button',
     './components/mixins/card',
     './components/mixins/navbar',
     './components/mixins/slider',

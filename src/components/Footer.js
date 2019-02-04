@@ -1,14 +1,17 @@
 import React from 'react'
 
+import BBBLogo from 'Images/ab-seal-horizontal-us.png';
+
 export default class Footer extends React.Component {
 
   render() {
     return (
       <React.Fragment>
       <ul class='footer'>
-        <li>© 2018 Monet Capital</li>
+        <li>© 2019 Monet Capital</li>
         <li>81 Willoughby St, Brooklyn, NY 11201</li>
         <li>info@monetcap.com</li>
+        <li><img data-src={BBBLogo} className='uk-width-small' alt='' data-uk-img /></li>
       </ul>
 
       <p className='uk-text-small uk-padding-small'>

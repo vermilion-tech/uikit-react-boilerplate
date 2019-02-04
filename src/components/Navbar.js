@@ -3,7 +3,7 @@ import React from 'react';
 import MonetcapLogo from 'Images/monet-cap-logo.png'
 
 const Navbar = (props) => (
-  <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+  <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-box-shadow-small">
   <nav className='uk-position-absolute uk-width-expand uk-navbar-container' data-uk-navbar>
     <div className='uk-navbar-left'>
       <div className='uk-navbar-item uk-visible@m'>
