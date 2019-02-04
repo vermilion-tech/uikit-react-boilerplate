@@ -54,11 +54,17 @@ export default class Hero extends React.Component {
 
             <div>
               <form className='apply-now-trigger uk-flex uk-flex-middle uk-flex-right'>
+
+                {/* TODO: Make this reusable compoent */}
                 <select className='uk-select uk-width-expand'>
-                  <option>Option 1</option>
-                  <option>Option 2</option>
-                  <option>Option 3</option>
+                  <option>$10,000 - $25,000</option>
+                  <option>$26,000 - $50,000</option>
+                  <option>$51,000 - $100,000</option>
+                  <option>$51,000 - $100,000</option>
+                  <option>$101,000 - $250,000</option>
+                  <option>Over $250,000</option>
                 </select>
+
                 <button data-uk-toggle='#apply-now-modal' className='uk-button uk-button-primary uk-flex-1' type='button'>Apply Now</button>
                 <div id='apply-now-modal' data-uk-modal>
                   <div className='uk-modal-dialog'>

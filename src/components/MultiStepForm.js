@@ -28,7 +28,7 @@ const MultiStepForm = (props) => (
             <li key={i}>
               <a href='#'>
                 <span className='uk-text-uppercase uk-text-small uk-visible@s'>{LoremIpsum({count: 2, units: 'words', words: ['lorem', 'ipsum', 'sumet', 'dolor', 'omnis', 'vitae', 'aute', 'irute', 'vive']})}</span>
-                <span className='uk-hidden@s' data-uk-icon='icon: heart;'/>
+                <span className='uk-hidden@s' data-uk-icon='icon: chevron-right;'/>
               </a>
             </li>
           ))
