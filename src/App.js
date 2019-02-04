@@ -13,7 +13,7 @@ import HighlightCards from './components/HighlightCards'
 import IconGrid from './components/IconGrid'
 import Accordion from './components/Accordion'
 import Footer from './components/Footer'
-import MultiStepForm from './components/MultiStepForm'
+import PartnerSignupForm from './components/PartnerSignupForm'
 
 export default (props) => {
   return (
@@ -65,13 +65,13 @@ export default (props) => {
           <button data-uk-toggle='#partners-apply-modal' className='uk-align-center uk-width-large uk-button uk-button-alternate' type='button'>Sign up with us</button>
           <div id='partners-apply-modal' data-uk-modal>
             <div className='uk-modal-dialog'>
-              Loading..
+              <PartnerSignupForm />
             </div>
           </div>
         </div>
       </div>
-      
-      <div className='uk-section uk-section-large uk-background-secondary'>
+
+      <div className='uk-section uk-section-large uk-background-secondary '>
         <div className='uk-container'>
 
           <Footer />
