@@ -70,44 +70,14 @@ export default (props) => {
           </div>
         </div>
       </div>
-
-      <div className='uk-section uk-section-large'>
+      
+      <div className='uk-section uk-section-large uk-background-secondary'>
         <div className='uk-container'>
-          <div className='uk-margin-large'>
-            <h1 className='uk-text-center uk-text-primary'>See how much you qualify for.</h1>
-          </div>
 
-          <div class="uk-width-2-3@m uk-width-1-1@s uk-align-center">
-            <form className='apply-now-trigger uk-flex uk-flex-middle uk-flex-right'>
-              <select className='uk-select uk-width-expand'>
-                <option>$10,000 - $25,000</option>
-                <option>$26,000 - $50,000</option>
-                <option>$51,000 - $100,000</option>
-                <option>$51,000 - $100,000</option>
-                <option>$101,000 - $250,000</option>
-                <option>Over $250,000</option>
-              </select>
-              <button data-uk-toggle='#apply-now-modal-2' className='uk-button uk-button-primary uk-flex-1' type='button'>Apply Now</button>
-              <div id='apply-now-modal-2' data-uk-modal>
-                <div className='uk-modal-dialog'>
-                  <MultiStepForm />
-                </div>
-              </div>
-            </form>
-          </div>
-
+          <Footer />
 
         </div>
       </div>
-
-    <div className='uk-section uk-section-large uk-background-secondary'>
-      <div className='uk-container'>
-
-        <Footer />
-
-      </div>
-    </div>
     </React.Fragment>
-
   )
 }
