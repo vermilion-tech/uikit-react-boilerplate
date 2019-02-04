@@ -5,8 +5,8 @@ module.exports = {
     alias: {
       Components: path.resolve(__dirname, '../src/components/'),
       Stylesheets: path.resolve(__dirname, '../src/stylesheets/'),
-      Images: path.resolve(__dirname, './src/images/'),
-      Templates: path.resolve(__dirname, './src/templates/')
+      Images: path.resolve(__dirname, '../src/images/'),
+      Templates: path.resolve(__dirname, '../src/templates/')
     }
   },
   module: {
