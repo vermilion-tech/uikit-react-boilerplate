@@ -14,43 +14,39 @@ export default class Hero extends React.Component {
         hero_body: 'Loading...',
         hero_image: HeroImage,
         hero_footer_text: 'Loading...'
-        }
       }
     }
-
+  }
 
   componentDidMount() {
-    axios.get('https://staging-backend.monetcap.com/api/home?_format=json')
-      .then( (res) => {
-        let data = res.data[0]
+    axios.get('https://staging-backend.monetcap.com/api/home?_format=json').then((res) => {
+      let data = res.data[0]
 
-        this.setState({
-          hero: {
-            hero_heading: data.hero_heading,
-            hero_body: data.hero_body,
-            hero_image: data.hero_image,
-            hero_footer_text: data.hero_footer_text
-          }
-        })
+      this.setState({
+        hero: {
+          hero_heading: data.hero_heading,
+          hero_body: data.hero_body,
+          hero_image: data.hero_image,
+          hero_footer_text: data.hero_footer_text
+        }
+      })
 
-      }, (err) => console.log(err));
+    }, (err) => console.log(err));
   }
 
   render() {
-    return (
-      <React.Fragment>
-      <div className='uk-height-1-1 uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-background-norepeat uk-background-cover uk-background-blend-overlay background-test' data-src={this.state.hero.hero_image} width='1920' height='1080' data-uk-img>
+    return (<React.Fragment>
+      <div className='uk-height-1-1 uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-background-norepeat uk-background-cover uk-background-blend-overlay background-test' data-src={this.state.hero.hero_image} width='1920' height='1080' data-uk-img="data-uk-img">
         <div className='uk-padding uk-width-1-1'>
           <div className='uk-light'>
             <h1>{this.state.hero.hero_heading}</h1>
           </div>
 
-          <div className='uk-child-width-1-2@s' data-uk-grid>
+          <div className='uk-child-width-1-2@s' data-uk-grid="data-uk-grid">
 
-            <div className='uk-light' dangerouslySetInnerHTML={{__html:
-            this.state.hero.hero_body}}>
-
-            </div>
+            <div className='uk-light' dangerouslySetInnerHTML={{
+                __html: this.state.hero.hero_body
+              }}></div>
 
             <div>
               <form className='apply-now-trigger uk-flex uk-flex-middle uk-flex-right'>
@@ -66,9 +62,9 @@ export default class Hero extends React.Component {
                 </select>
 
                 <button data-uk-toggle='#apply-now-modal' className='uk-button uk-button-primary uk-flex-1' type='button'>Apply Now</button>
-                <div id='apply-now-modal' data-uk-modal>
+                <div id='apply-now-modal' data-uk-modal="data-uk-modal">
                   <div className='uk-modal-dialog'>
-                    <MultiStepForm />
+                    <MultiStepForm/>
                   </div>
                 </div>
               </form>
@@ -82,7 +78,6 @@ export default class Hero extends React.Component {
           {this.state.hero.hero_footer_text}
         </div>
       </div>
-      </React.Fragment>
-    )
+    </React.Fragment>)
   }
 }
