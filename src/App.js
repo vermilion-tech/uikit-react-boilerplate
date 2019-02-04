@@ -9,6 +9,7 @@ import Hero from './components/Hero'
 import Navbar from './components/Navbar'
 import IconCarousel from './components/IconCarousel'
 import Flipcards from './components/Flipcards'
+import HighlightCards from './components/HighlightCards'
 import IconGrid from './components/IconGrid'
 import Accordion from './components/Accordion'
 
@@ -57,38 +58,7 @@ export default (props) => {
           <div className='uk-margin-large'>
             <h1 className='uk-text-center uk-light'>Partners</h1>
           </div>
-          <div className="uk-child-width-1-2@m uk-grid-match uk-grid" data-uk-grid>
-            <div>
-              <div className="uk-card uk-card-default uk-card-body">
-                <h3 className="uk-card-title">Lorem ipsum</h3>
-                <p className="uk-margin-bottom uk-text-left">Example card text for
-                partners section, let's make this a few lines.</p>
-              </div>
-            </div>
-            <div>
-              <div className="uk-card uk-card-default uk-card-body">
-                <h3 className="uk-card-title">Lorem ipsum</h3>
-                  <p className="uk-margin-bottom uk-text-left">Example card text for
-                  partners section, let's make this a few lines.</p>
-              </div>
-            </div>
-            <div>
-              <div className="uk-card uk-card-default uk-card-body">
-                <h3 className="uk-card-title">Lorem ipsum</h3>
-                  <p className="uk-margin-bottom uk-text-left">Example card text for
-                  partners section, let's make this a few lines.</p>
-              </div>
-            </div>
-            <div>
-              <div className="uk-card uk-card-default uk-card-body">
-                <h3 className="uk-card-title">Lorem ipsum</h3>
-                  <p className="uk-margin-bottom uk-text-left">Example card text for
-                  partners section, let's make this a few lines.</p>
-              </div>
-            </div>
-
-          </div>
-
+          <HighlightCards />
           <IconGrid />
         </div>
       </div>
