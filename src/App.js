@@ -15,7 +15,7 @@ import Accordion from './components/Accordion'
 export default (props) => {
   return (
     <React.Fragment>
-    
+
       <Navbar />
 
       <Hero />

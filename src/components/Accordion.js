@@ -5,9 +5,8 @@ import axios from 'axios'
 const AccordionItem = (props) => (
   <li>
     <a className='uk-accordion-title uk-text-primary uk-padding' href='#'>{props.accordion_heading}</a>
-    <div className='uk-accordion-content uk-padding'>
-      <p>{props.accordion_body}</p>
-    </div>
+    <div className='uk-accordion-content uk-padding' dangerouslySetInnerHTML={{__html:
+    props.accordion_body}}></div>
   </li>
 )
 const ExampleAccordionItem = {
