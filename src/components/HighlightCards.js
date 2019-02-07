@@ -1,57 +1,71 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import axios from 'axios'
+import axios from 'axios';
 
-const HighlightCard = (props) => (
-  <div>
-    <div className="uk-card uk-card-default uk-card-body">
-      <h3 className="uk-card-title">{props.highlight_heading}</h3>
-      <p className="uk-margin-bottom uk-text-left">{props.highlight_body}</p>
+const HighlightCard = (props) => {
+  const {
+    highlightHeading,
+    highlightBody,
+  } = props;
+
+  return (
+    <div>
+      <div className="uk-card uk-card-default uk-card-body">
+        <h3 className="uk-card-title">{highlightHeading}</h3>
+        <p className="uk-margin-bottom uk-text-left">{highlightBody}</p>
+      </div>
     </div>
-  </div>
-)
+  );
+};
+
+HighlightCard.propTypes = {
+  highlightHeading: PropTypes.string.isRequired,
+  highlightBody: PropTypes.string.isRequired,
+};
+
 const ExampleHighlightCard = {
-  highlight_heading: 'Loading...',
-  highlight_body: 'Loading...'
-}
+  highlightHeading: 'Loading...',
+  highlightBody: 'Loading...',
+};
 
 export default class HighlightCards extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      'highlight_cards': [ExampleHighlightCard]
-    }
+      highlightCards: [ExampleHighlightCard],
+    };
   }
 
   componentDidMount() {
     axios.get('https://staging-backend.monetcap.com/api/home/sections/partners/highlight_cards?_format=json')
-      .then( (res) => {
+      .then((res) => {
         if (res.status === 200) {
-          let items = res.data.map( (item,index) => ({
-            highlight_heading: item.highlight_heading,
-            highlight_body: item.highlight_body,
-          }))
+          const items = res.data.map(item => ({
+            highlightHeading: item.highlight_heading,
+            highlightBody: item.highlight_body,
+          }));
 
-          this.setState({ highlight_cards: items })
+          this.setState({ highlightCards: items });
         }
-      }, (err) => console.log(err))
+      }, err => console.log(err));
   }
 
 
-    render() {
-      return (
-        <React.Fragment>
+  render() {
+    const { highlightCards } = this.state;
 
-            <div className="uk-child-width-1-2@m uk-grid-match uk-grid" data-uk-grid>
+    return (
+      <React.Fragment>
 
-                {
-                  this.state.highlight_cards.map( (highlight_card, index) => <HighlightCard {...highlight_card} />)
-                }
+        <div className="uk-child-width-1-2@m uk-grid-match uk-grid" data-uk-grid>
+          {
+            highlightCards.map(highlightCard => <HighlightCard {...highlightCard} />)
+          }
+        </div>
 
-            </div>
-
-        </React.Fragment>
-      )
-    }
+      </React.Fragment>
+    );
   }
+}

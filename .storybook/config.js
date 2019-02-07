@@ -6,12 +6,12 @@ const resolutionViewports = {
     name: '1920 x 1080',
     style: {
       width: '1920px',
-      heigth: '1080px'
-    }
-  }
-}
+      heigth: '1080px',
+    },
+  },
+};
 
-configureViewport({ viewports: {...INITIAL_VIEWPORTS, ...resolutionViewports } })
+configureViewport({ viewports: { ...INITIAL_VIEWPORTS, ...resolutionViewports } });
 
 function loadStories() {
   require('./stories/index.js');

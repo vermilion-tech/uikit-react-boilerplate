@@ -8,11 +8,20 @@ pipeline {
         CI = 'true'
     }
     stages {
+        stage('Install Dependencies') {
+            steps {
+              sh 'npm install'
+            }
+        }
+        stage('Code Quality Check') {
+            steps {
+              sh 'npm run lint'
+            }
+        }
         stage('Build Staging') {
             when { branch 'development' }
             steps {
                 slackSend (color: '#FFFF00', message: "Started: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'\n(${env.BUILD_URL})")
-                sh 'npm install'
                 sh 'npm run build:dev'
                 sh 'npm run build:storybook'
             }
@@ -21,7 +30,6 @@ pipeline {
             when { branch 'master' }
             steps {
                 slackSend (color: '#FFFF00', message: "Started: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'\n(${env.BUILD_URL})")
-                sh 'npm install'
                 sh 'npm run build'
             }
         }

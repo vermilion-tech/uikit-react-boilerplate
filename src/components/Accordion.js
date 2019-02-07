@@ -1,54 +1,73 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import axios from 'axios'
+import axios from 'axios';
 
-const AccordionItem = (props) => (
-  <li>
-    <a className='uk-accordion-title uk-text-primary uk-padding' href='#'>{props.accordion_heading}</a>
-    <div className='uk-accordion-content uk-padding' dangerouslySetInnerHTML={{__html:
-    props.accordion_body}}></div>
-  </li>
-)
+const AccordionItem = (props) => {
+  const { heading, body } = props;
+
+  return (
+    <li>
+      <a type="button" className="uk-accordion-title uk-text-primary uk-padding">{heading}</a>
+      <div
+        className="uk-accordion-content uk-padding"
+        dangerouslySetInnerHTML={{
+          __html:
+          body,
+        }}
+      />
+    </li>
+  );
+};
+
+AccordionItem.propTypes = {
+  heading: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+};
+
 const ExampleAccordionItem = {
-  accordion_heading: 'Loading...'
-}
+  heading: 'Loading...',
+  body: 'Loading...',
+};
 
 export default class Accordion extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      'accordion_items': [ExampleAccordionItem]
-    }
+      accordionItems: [ExampleAccordionItem],
+    };
   }
 
   componentDidMount() {
     axios.get('https://staging-backend.monetcap.com/api/home/sections/about/accordion?_format=json')
-      .then( (res) => {
+      .then((res) => {
         if (res.status === 200) {
-          let items = res.data.map( (item,index) => ({
-            accordion_heading: item.accordion_item_heading,
-            accordion_body: item.accordion_item_body,
-          }))
+          const items = res.data.map(item => ({
+            heading: item.accordion_item_heading,
+            body: item.accordion_item_body,
+          }));
 
-          this.setState({ accordion_items: items })
+          this.setState({ accordionItems: items });
         }
-      }, (err) => console.log(err))
+      }, err => console.log(err));
   }
 
   render() {
+    const { accordionItems } = this.state;
+
     return (
       <React.Fragment>
 
-          <ul data-uk-accordion>
+        <ul data-uk-accordion>
 
-              {
-                this.state.accordion_items.map( (accordion_item, index) => <AccordionItem {...accordion_item} />)
-              }
+          {
+            accordionItems.map(item => <AccordionItem {...item} />)
+          }
 
-          </ul>
+        </ul>
 
       </React.Fragment>
-    )
+    );
   }
 }

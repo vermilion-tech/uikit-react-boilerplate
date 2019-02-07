@@ -1,57 +1,76 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import axios from 'axios'
+import axios from 'axios';
 
-const IconGridItem = (props) => (
-  <div>
-    <figure className='uk-thumbnail'>
-      <img data-src={props.icon_image} alt={props.icon_image_alt_text} data-uk-img />
-      <figcaption className='uk-thumbnail-caption'>{props.icon_caption}</figcaption>
-    </figure>
-  </div>
-)
+const IconGridItem = (props) => {
+  const {
+    iconImage,
+    iconImageAltText,
+    iconCaption,
+  } = props;
+
+  return (
+    <div>
+      <figure className="uk-thumbnail">
+        <img data-src={iconImage} alt={iconImageAltText} data-uk-img />
+        <figcaption className="uk-thumbnail-caption">{iconCaption}</figcaption>
+      </figure>
+    </div>
+  );
+};
+
+IconGridItem.propTypes = {
+  iconImage: PropTypes.string.isRequired,
+  iconImageAltText: PropTypes.string.isRequired,
+  iconCaption: PropTypes.string.isRequired,
+};
+
 const ExampleIcon = {
-  icon_caption: "Loading..."
-}
+  iconCaption: 'Loading...',
+  iconImage: 'Loading...',
+  iconImageAltText: 'Loading...',
+};
 
 export default class IconGrid extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      'icons': [ExampleIcon]
-    }
+      icons: [ExampleIcon],
+    };
   }
 
   componentDidMount() {
     axios.get('https://staging-backend.monetcap.com/api/home/sections/partners/icon_grid?_format=json')
-      .then( (res) => {
+      .then((res) => {
         if (res.status === 200) {
-          let items = res.data.map( (item,index) => ({
-            icon_image: item.icon_image,
-            icon_caption: item.icon_caption,
-            icon_image_alt_text: item.icon_image_alt_text
-          }))
+          const items = res.data.map(item => ({
+            iconImage: item.icon_image,
+            iconCaption: item.icon_caption,
+            iconImageAltText: item.icon_image_alt_text,
+          }));
 
-          this.setState({ icons: items })
+          this.setState({ icons: items });
         }
-      }, (err) => console.log(err))
+      }, err => console.log(err));
   }
 
   render() {
+    const { icons } = this.state;
+
     return (
       <React.Fragment>
 
 
-          <div className='uk-child-width-1-2@s uk-child-width-1-4@m  uk-text-center uk-grid uk-margin-large'>
+        <div className="uk-child-width-1-2@s uk-child-width-1-4@m  uk-text-center uk-grid uk-margin-large">
 
-              {
-                this.state.icons.map( (icon, index) => <IconGridItem {...icon} />)
-              }
-
-          </div>
+          {
+            icons.map(icon => <IconGridItem {...icon} />)
+          }
+        </div>
 
       </React.Fragment>
-    )
+    );
   }
 }
