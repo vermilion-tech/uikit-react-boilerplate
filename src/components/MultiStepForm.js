@@ -50,16 +50,10 @@ class MultiStepForm extends React.Component {
           </select>
 
           {/*
-            An input submit button which brings up the modal for the user to
+            An button which brings up the modal for the user to
             fill out the remainder of the `MultiStepForm`.
           */}
-          <label>
-            <input
-              className="uk-button uk-button-primary uk-flex-1"
-              value="Apply Now"
-              type="submit"
-            />
-          </label>
+          <button type="button" className="uk-button uk-button-primary uk-flex-">Apply Now</button>
 
           {/*
             Shown on `Apply Now` input submit button click. `moneySelect` state
