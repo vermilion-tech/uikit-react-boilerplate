@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import UIkit from 'uikit';
 
 import {
   SoonSelect,
@@ -7,6 +8,26 @@ import {
   RevenueSelect,
   IndustrySelect,
 } from 'Templates/MultiStepForm';
+
+const LeftArrow = (
+  <div className="uk-position-bottom-right uk-padding">
+    <a
+      href="#"
+      data-uk-switcher-item="previous"
+      data-uk-icon="icon: chevron-left; ratio: 1.5"
+    />
+  </div>
+);
+
+const RightArrow = (
+  <div className="uk-position-bottom-right uk-padding">
+    <a
+      href="#"
+      data-uk-switcher-item="next"
+      data-uk-icon="icon: chevron-right; ratio: 1.5"
+    />
+  </div>
+);
 
 const LeftRightArrows = (
   <div className="uk-position-bottom-right uk-padding">
@@ -43,8 +64,22 @@ class MultiStepFormModal extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+    this.switcher = UIkit.switcher('.msf-tab', {
+      connect: '.form-switcher',
+      animation: 'uk-animation-fade',
+      duration: '250',
+      active: '1',
+    });
+  }
+
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
+
+    // TODO: there has to be a better way to do this
+    if (this.switcher.index() !== 5) {
+      this.switcher.show('next');
+    }
   }
 
   handleSubmit(event) {
@@ -77,6 +112,7 @@ class MultiStepFormModal extends React.Component {
       businessName,
     };
 
+    // TODO: google sheets form post
     console.log(req);
   }
 
@@ -90,8 +126,7 @@ class MultiStepFormModal extends React.Component {
             {/* tabs */}
             <div className=" uk-background-muted uk-width-1-4@s">
               <ul
-                className="uk-tab uk-tab-left uk-margin-remove-bottom"
-                data-uk-switcher="connect: .form-switcher; animation: uk-animation-fade; active: 1;"
+                className="msf-tab uk-tab uk-tab-left uk-margin-remove-bottom"
               >
                 <li>
                   <a href="#">{moneySelect}</a>
@@ -124,7 +159,7 @@ class MultiStepFormModal extends React.Component {
                         {moneySelect}
                       </h2>
 
-                      {LeftRightArrows}
+                      {RightArrow}
                     </div>
                   </li>
                   <li>
@@ -153,7 +188,7 @@ class MultiStepFormModal extends React.Component {
                       ))}
                     </div>
 
-                    {LeftRightArrows}
+                    {RightArrow}
                   </li>
 
                   <li>
@@ -283,7 +318,7 @@ class MultiStepFormModal extends React.Component {
                       />
                     </div>
 
-                    {LeftRightArrows}
+                    {LeftArrow}
                   </li>
                 </ul>
               </form>
