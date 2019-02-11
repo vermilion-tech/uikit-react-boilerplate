@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import UIkit from 'uikit';
+import axios from 'axios';
 
 import {
   SoonSelect,
@@ -85,6 +86,10 @@ class MultiStepFormModal extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
+    // TODO: this is weak and insecure spam protection, implement captcha in future
+    const { honeypot } = this.state;
+    if (honeypot) { return; }
+
     const {
       soonSelect,
       yearSelect,
@@ -113,7 +118,19 @@ class MultiStepFormModal extends React.Component {
     };
 
     // TODO: google sheets form post
-    console.log(req);
+    const formData = new FormData();
+
+    Object.keys(req).forEach(key => formData.set(key, req[key]));
+
+    axios.post('https://script.google.com/macros/s/AKfycbyvfXZluwDVsCEDL0JrE_zfvLHwLqgCxLTbmibp0CT5pWG36Hk/exec',
+      formData,
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      })
+      .then(resp => console.log(resp))
+      .then(err => console.log(err));
   }
 
   render() {
@@ -158,8 +175,6 @@ class MultiStepFormModal extends React.Component {
                       <h2 className="monet-text-gold">
                         {moneySelect}
                       </h2>
-
-                      {RightArrow}
                     </div>
                   </li>
                   <li>
@@ -180,6 +195,7 @@ class MultiStepFormModal extends React.Component {
                               name="soonSelect"
                               onChange={this.handleChange}
                               value={item}
+                              required
                             />
                             {item}
                           </label>
@@ -187,8 +203,6 @@ class MultiStepFormModal extends React.Component {
                         </div>
                       ))}
                     </div>
-
-                    {RightArrow}
                   </li>
 
                   <li>
@@ -206,6 +220,7 @@ class MultiStepFormModal extends React.Component {
                               name="yearSelect"
                               onChange={this.handleChange}
                               value={item}
+                              required
                             />
                             {item}
                           </label>
@@ -213,8 +228,6 @@ class MultiStepFormModal extends React.Component {
                         </div>
                       ))}
                     </div>
-
-                    {LeftRightArrows}
                   </li>
 
                   <li>
@@ -232,6 +245,7 @@ class MultiStepFormModal extends React.Component {
                               name="revenueSelect"
                               onChange={this.handleChange}
                               value={item}
+                              required
                             />
                             {item}
                           </label>
@@ -239,8 +253,6 @@ class MultiStepFormModal extends React.Component {
                         </div>
                       ))}
                     </div>
-
-                    {LeftRightArrows}
                   </li>
 
                   <li>
@@ -263,8 +275,6 @@ class MultiStepFormModal extends React.Component {
                         <br />
                       </div>
                     </div>
-
-                    {LeftRightArrows}
                   </li>
 
                   <li>
@@ -280,6 +290,7 @@ class MultiStepFormModal extends React.Component {
                           name="firstName"
                           onChange={this.handleChange}
                           placeholder="First Name"
+                          required
                         />
                         <input
                           className="uk-input"
@@ -287,6 +298,7 @@ class MultiStepFormModal extends React.Component {
                           name="lastName"
                           onChange={this.handleChange}
                           placeholder="Last Name"
+                          required
                         />
                         <input
                           className="uk-input"
@@ -294,6 +306,7 @@ class MultiStepFormModal extends React.Component {
                           name="email"
                           onChange={this.handleChange}
                           placeholder="Email Address"
+                          required
                         />
                         <input
                           className="uk-input"
@@ -301,6 +314,7 @@ class MultiStepFormModal extends React.Component {
                           name="phone"
                           onChange={this.handleChange}
                           placeholder="Phone Number"
+                          required
                         />
                         <input
                           className="uk-input"
@@ -308,6 +322,7 @@ class MultiStepFormModal extends React.Component {
                           name="businessName"
                           onChange={this.handleChange}
                           placeholder="Business Name"
+                          required
                         />
                       </div>
 
@@ -317,10 +332,9 @@ class MultiStepFormModal extends React.Component {
                         value="Get Cash Now"
                       />
                     </div>
-
-                    {LeftArrow}
                   </li>
                 </ul>
+                <input style={{ display: 'none' }} onChange={this.handleChange} id="honeypot" type="text" name="honeypot" value="" />
               </form>
             </div>
           </div>
