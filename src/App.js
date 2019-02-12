@@ -16,7 +16,6 @@ import PartnerSignupForm from './components/PartnerSignupForm';
 
 const App = (
   <React.Fragment>
-
     {Navbar}
 
     <Hero />
@@ -54,7 +53,7 @@ const App = (
       </div>
     </div>
 
-    <div className="uk-section uk-section-large uk-background-cover uk-background-norepeat" data-src={BackgroundImage1} data-uk-img>
+    <div id="section-partners" className="uk-section uk-section-large uk-background-cover uk-background-norepeat" data-src={BackgroundImage1} data-uk-img>
       <div className="uk-container">
         <div className="uk-margin-large">
           <h1 className="uk-text-center uk-light">Partners</h1>

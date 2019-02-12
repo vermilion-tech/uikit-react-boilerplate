@@ -49,11 +49,12 @@ export default class Hero extends React.Component {
     return (
       <React.Fragment>
         <div
-          className="uk-height-1-1 uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-background-norepeat uk-background-cover uk-background-blend-overlay background-test"
+          className="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-background-norepeat uk-background-cover uk-background-blend-overlay background-test"
           data-src={heroImage}
           width="1920"
           height="1080"
           data-uk-img="data-uk-img"
+          data-uk-height-viewport
         >
           <div className="uk-padding uk-width-1-1">
             <div className="uk-light">
