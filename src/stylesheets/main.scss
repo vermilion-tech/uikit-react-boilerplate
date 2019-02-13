@@ -11,22 +11,22 @@
 @import
   './abstracts/variables';
 
-// 2. Import custom components.
-@import
-  './components/footer',
-  './components/multistepform';
-
-// 3. Import UIKit variable overrides.
+// 2. Import UIKit variable overrides.
 @import
   './components/variables/accordion',
   './components/variables/card',
   './components/variables/navbar',
   './components/variables/tab';
 
-// 4. Import framework variables and mixins.
+// 3. Import framework variables and mixins.
 @import
   '~uikit/src/scss/variables-theme',
   '~uikit/src/scss/mixins-theme';
+
+// 4. Import custom components.
+  @import
+    './components/footer',
+    './components/multistepform';
 
 // 5. Import mixin overrides.
 @import
@@ -45,8 +45,3 @@
 @import
   './base/fonts',
   './base/typography';
-
-// TODO: Move this to a mixin or utility or use hook.
-.uk-border-1 {
-  border: 1px solid $monet-dark-grey;
-}

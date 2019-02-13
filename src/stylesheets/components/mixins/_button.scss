@@ -2,6 +2,10 @@
 
 // Override button styles.
 @mixin hook-button() {
+  .uk-button {
+    text-transform: none;
+  }
+  
   .apply-now-trigger & {
     border-top-right-radius: .25em;
     border-bottom-right-radius: .25em;
